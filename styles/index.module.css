@@ -1,0 +1,73 @@
+.grid_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* For screens wider than 1200px */
+@media (min-width: 1200px) {
+  .grid_container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* For screens between 992px and 1199px */
+@media (max-width: 1199px) {
+  .grid_container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* For screens between 768px and 991px */
+@media (max-width: 991px) {
+  .grid_container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* For screens up to 767px */
+@media (max-width: 767px) {
+  .grid_container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.grid_item {
+  background-color: #f1eeff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid #7d64ff17;
+}
+
+.grid_content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: start;
+}
+
+.grid_item_icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: var(--primary);
+}
+
+.grid_item_title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.grid_item_description {
+  font-size: 14px;
+}
+
+.page_header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}

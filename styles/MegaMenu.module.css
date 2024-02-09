@@ -1,0 +1,237 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav-height);
+  position: relative;
+  background: var(--secondary);
+  text-align: start;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 16px !important;
+  font-style: normal !important;
+}
+
+.navigation h4 {
+  font-weight: 500;
+}
+
+.navigation h4,
+.navigation h3 {
+  font-size: 16px !important;
+}
+
+.navigation ul {
+  padding-left: 0rem;
+  margin-bottom: 0rem;
+}
+
+.nav_list {
+  display: inline-flex;
+  gap: 2rem;
+  align-items: center;
+  margin: 0 1.5rem;
+}
+
+.nav_action {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav_link {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.btn_primary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-primary);
+  font-weight: 500;
+  padding: 0.6rem 1.5rem;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  direction: ltr;
+}
+
+.btn_primary span {
+  margin-right: 5px !important;
+}
+
+.nav_toggle {
+  cursor: pointer;
+  display: none;
+}
+
+.dropdown {
+  position: absolute;
+  top: var(--nav-height);
+  left: 0;
+  width: 100%;
+  background: var(--dropdown-bg);
+  box-shadow: 0 2px 0px var(--shadow);
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transition: all 0.3s ease-in;
+  z-index: 1000;
+}
+
+.dropdown_inner > div {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .navigation {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .dropdown_inner > div {
+    grid-template-columns: repeat(3, 1fr);
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 960px) {
+  .navigation {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .dropdown_inner > div {
+    grid-template-columns: repeat(4, 1fr);
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navigation {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .dropdown_inner > div {
+    grid-template-columns: repeat(5, 1fr);
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+@media (min-width: 2560px) {
+  .navigation {
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+  .dropdown_inner > div {
+    grid-template-columns: repeat(5, 1fr);
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+}
+
+.nav_list_menu svg {
+  transition: all 0.5s ease;
+  transform: rotate(360deg);
+}
+
+.nav_list_menu .dropdown {
+  clip-path: polygon(0 0, 100% 0, 100% 102%, 0 102%);
+}
+
+.item_list {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+.item_list h4 {
+  font-weight: 500;
+  font-size: 16px !important;
+  margin-bottom: 0px;
+}
+
+.item_img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--secondary);
+}
+
+.item_list_info {
+  position: relative;
+  width: 100%;
+}
+.item_list_info svg {
+  margin-left: 15px;
+}
+
+@media (max-width: 840px) {
+  .nav_toggle {
+    display: block;
+  }
+  .nav_menu {
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    background: var(--dropdown-bg);
+    display: none;
+  }
+  .nav_menu.active {
+    display: block;
+  }
+
+  .nav_list {
+    display: block;
+    margin: 0;
+    text-align: center;
+  }
+  .nav_link {
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  .dropdown {
+    top: 0;
+    position: relative;
+    clip-path: unset;
+    height: 100%;
+    text-align: start;
+    transition: all 0.3s ease-in;
+  }
+
+  /* keep only tools in nav */
+  .remove_in_mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 365px) {
+  .btn_primary {
+    padding: 0.4rem 1rem;
+  }
+}
+
+.logo h3 {
+  display: flex;
+  color: #2d2b3a;
+  font-size: 1.75rem !important;
+  font-weight: bold;
+  cursor: pointer;
+  align-items: baseline;
+  margin-bottom: 0px;
+  direction: ltr;
+}
